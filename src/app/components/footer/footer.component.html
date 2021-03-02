@@ -1,0 +1,22 @@
+
+<mat-grid-list cols="4" rowHeight="250px">
+  <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color" >
+
+
+
+
+  <mat-grid-tile-header [style.background]="tile.color">
+      <mat-card-title style="position: absolute; left:400px; color:black; font-size: 16px;">{{tile.text}}</mat-card-title>
+    </mat-grid-tile-header>
+
+
+    <img mat-card-sm-image src={{tile.imag1}} width="50px">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img mat-card-sm-image src={{tile.imag2}} width="50px" >
+
+  </mat-grid-tile>
+</mat-grid-list>

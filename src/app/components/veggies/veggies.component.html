@@ -1,0 +1,22 @@
+<div >
+  <mat-grid-list cols="4" rowHeight="250px">
+  <mat-grid-tile
+      *ngFor="let tile of veggies"
+      [colspan]=1
+      [rowspan]=1
+      [style.background]=''>
+      <mat-grid-tile-header>
+        <mat-card-title>{{tile.name}}</mat-card-title>
+      </mat-grid-tile-header>
+    <img mat-card-lg-image src='assets/img/product/vegetables/fruits/fruits.png' width="250px" >
+    <mat-grid-tile-footer>
+      <mat-card-actions>
+        <button mat-button>+</button>
+        <button mat-button>- </button>
+      </mat-card-actions>
+    </mat-grid-tile-footer>
+  </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+

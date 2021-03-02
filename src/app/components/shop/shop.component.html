@@ -1,0 +1,36 @@
+<div >
+<app-top-bar ></app-top-bar>
+<br><br><br><br><br><br><br><br>
+<app-profile *ngIf="userProfileOn"></app-profile>
+</div>
+<div  *ngIf="veggieCatalogOn">
+<app-veggies></app-veggies>
+</div>
+<br><br><br><br><br>
+<div *ngIf="entryCatalogOn">
+  <!--Grid0-->
+  <mat-grid-list cols="4" rowHeight="250px">
+    <mat-grid-tile
+      *ngFor="let department of departments"
+      [colspan]="1"
+      [rowspan]="1"
+      [style.background]=0>
+      <mat-grid-tile-header>
+        <mat-card-title>{{department.name}}</mat-card-title>
+      </mat-grid-tile-header>
+      <img (click)="gotoSubCat(department.id)"  mat-card-lg-image src={{tiles1[0].imag}} width="250px" >
+      <mat-grid-tile-footer>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>View </button>
+        </mat-card-actions>
+      </mat-grid-tile-footer>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <br>
+</div>
+<div>
+
+  <app-footer></app-footer>
+</div>
+

@@ -1,0 +1,67 @@
+<div class="d-flex" style="padding:40px">
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" orientation="vertical">
+  <div>
+    <li style="width:240px; height:80px">
+        <img src={{userpic}} alt="Avatar" style="width:50px">
+        <!--<img src="assets/img/dummy/deba.jpg" alt="Avatar" style="width:50px; boarder-radius:50%">-->
+        <br>Hello {{userName}}
+    </li>
+
+  </div>
+    <li ngbNavItem="top" *ngIf="!blockProfile">
+        <a ngbNavLink style="width:240px; height:60px">Profile Information</a>
+
+
+        <ng-template ngbNavContent >
+          <div style="position:relative;left:150px" [formGroup]="addrForm">
+            <mat-form-field >
+                <input matInput placeholder="First Name" formControlName='fName' value=" " style="width:100; height:50px">
+            </mat-form-field>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-form-field>
+                <input matInput placeholder="Last Name" formControlName='lName'  value=" " style="width:100; height:50px">
+            </mat-form-field>
+
+            <br><br>
+            Your Gender
+            <br><br>
+            <mat-radio-group aria-label="Sex" formControlName='sex'>
+                <mat-radio-button value="1">Male</mat-radio-button>&nbsp;&nbsp;
+                <mat-radio-button value="2">Female</mat-radio-button>&nbsp;&nbsp;
+                <mat-radio-button value="3">Other</mat-radio-button>
+            </mat-radio-group>
+            <br><br>
+
+            <mat-form-field>
+                <input matInput placeholder="email Address" formControlName='emailAddr' value="" style="width:100; height:50px">
+            </mat-form-field>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-form-field>
+                <input matInput placeholder="Phone Number" formControlName='phoneNumber' value="" style="width:100; height:50px">
+            </mat-form-field>
+          </div>
+          <div>
+            <button type="submit" (click)="addrSubmit()">Submit</button>
+          </div>
+        </ng-template>
+
+    </li>
+    <li ngbNavItem="middle" >
+      <a  ngbNavLink style="width:240px; height:60px;">My Orders</a>
+        <ng-template ngbNavContent>
+            <app-orders></app-orders>
+        </ng-template>
+    </li>
+
+    <li ngbNavItem="bottom" >
+      <a ngbNavLink style="width:240px; height:60px">Manage Addresses</a>
+      <ng-template ngbNavContent>
+        <app-address></app-address>
+      </ng-template>
+    </li>
+  </ul>
+
+  <div [ngbNavOutlet]="nav" class="ml-4"></div>
+</div>
+
+<!--<pre>Active: {{ active }}</pre>-->

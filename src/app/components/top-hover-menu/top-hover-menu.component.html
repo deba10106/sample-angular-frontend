@@ -1,0 +1,86 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: white;
+  color: white;
+  padding: 30px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: -50px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  width: 300px;
+  font-family:'Times New Roman';
+  font-size:16px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 20px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+
+
+
+
+<div class="dropdown">
+  <button *ngIf="!currentState" style="position: relative; padding: 30px;" type="button" mdbBtn color="white" rounded="true">
+    {{username}}
+    <img  style="width: 20px; height:20px" src="assets/img/profile/profile.png">
+
+  </button>
+  <button *ngIf="currentState" style="position: relative; right:-20px; padding: 10px;" type="button" mdbBtn color="white" rounded="true">
+    {{username}}
+    <img  style="width: 20px; height:20px" src="assets/img/profile/profile.png">
+
+  </button>
+  <div class="dropdown-content">
+    <a href="/profile"  >Profile</a>
+    <a href="/notifications" >Notifications</a>
+    <a  href="/" (click)="logout()">Logout</a>
+
+
+
+
+
+
+  </div>
+</div>
+
+<!--<div class="btn-group" mdbDropdown>
+  <button mdbDropdownToggle type="button" mdbBtn color="primary" class="dropdown-toggle waves-light"
+    mdbWavesEffect>
+    Basic dropdown
+  </button>
+
+  <div class="dropdown-menu dropdown-primary">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="divider dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+</div>-->
+
+

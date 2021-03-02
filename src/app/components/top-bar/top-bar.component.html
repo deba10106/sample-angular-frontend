@@ -1,0 +1,30 @@
+
+<div class="toolbar" role="banner" style="position: fixed;z-index: 1140;">
+  <a *ngIf="!currentState" href=" "  style="position:absolute; left:25px"><img src="assets/img/shopit_logo.png" alt="logo" align="center" width="150" height="70"></a>
+  <a *ngIf="currentState" href=" "  style="position:absolute; left:25px"><img src="assets/img/shopit_logo.png" alt="logo" align="center" width="50" height="25"></a>
+  <span style="flex: 1 1 auto"></span>
+  <a *ngIf="!currentState" href="/delivery"> Deliver with us  <img src="assets/img/services/delivery.png" width=70 alt="logo"></a>
+  <a *ngIf="currentState" href="/delivery">  <img src="assets/img/services/delivery.png" width=25 alt="logo"></a>
+  <span style="flex: 1 1 auto"></span>
+  <a *ngIf="!currentState" href="/sell"> <img src="assets/img/services/sell.png" width=50 alt="logo">List your shop </a>
+  <a *ngIf="currentState" href="/sell"> <img src="assets/img/services/sell.png" width=15 alt="logo"> </a>
+  <span style="flex: 1 1 auto"></span>
+
+
+
+  <!--<a class="login"  style="color:rgb(7, 7, 7)" href="/login">Login/Registration</a>-->
+
+  <app-login *ngIf="!isLoggedIn" style="position:absolute; right:100px"></app-login>
+
+  <app-top-hover-menu *ngIf="isLoggedIn" style="position:absolute; right:100px"></app-top-hover-menu>
+  <span style="flex: 1 1 auto"></span>
+  <a href="/cart" *ngIf="isLoggedIn && !currentState" style="position:absolute; right:30px;"><img src="assets/img/product/cart/cart.png" alt="logo"  width="30" height="30">Cart</a>
+  <a href="/cart" *ngIf="isLoggedIn && currentState" style="position:absolute; right:30px;"><img src="assets/img/product/cart/cart.png" alt="logo"  width="30" height="30"></a>
+
+  <!--Registration Frame=frame1 Below-->
+
+  <!--Registration Frame=frame1 ends-->
+
+</div>
+
+
